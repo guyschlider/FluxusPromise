@@ -15,5 +15,5 @@ public protocol Action {}
 public protocol Dispatcher {
   associatedtype ActionType: Action
   var commit: (Mutation) -> Void { get set }
-  func dispatch(action: ActionType) -> Promise<T>
+  func dispatch<T>(action: ActionType) -> Promise<T>
 }
